@@ -1,0 +1,5 @@
+<p>{{ footerText }}</p>
+<input type="text" [(ngModel)]="footerText" (ngModelChange)="handleFooterTextChange($event)" />
+<div>
+    <ng-content></ng-content>
+</div>

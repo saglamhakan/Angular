@@ -1,0 +1,9 @@
+<div>
+    <button
+        [class.primary]="buttonType === 'primary'"
+        [class.secondary]="buttonType === 'secondary'"
+        type="button"
+        (click)="handleButtonClick()">
+        {{ buttonText }}
+    </button>
+</div>

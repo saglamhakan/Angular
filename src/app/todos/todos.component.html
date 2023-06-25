@@ -1,0 +1,43 @@
+<!--ul>
+    <li *ngFor="let todoItem of todoList">{{ todoItem.id }} - {{ todoItem.title }} - {{ todoItem.dueDate | date }}</li>
+</ul-->
+
+<div class="table-container">
+    <div class="create-btn">
+        <a class="btn" [routerLink]="'/todos/create'">New Todo Item</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Due Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let todoItem of todoList$ | async | slice: (pageIndex * pageSize): ((pageIndex * pageSize) + pageSize)">
+                <td>{{ todoItem.id }}</td>
+                <td>{{ todoItem.title }}</td>
+                <td>{{ todoItem.dueDate | date: 'dd/MM/yyyy' }}</td>
+                <td>
+                    <a [routerLink]="'/todos/' + todoItem.id">Details</a>
+                    <a href="javascript:void;" (click)="handleDeleteTodoItem(todoItem.id)">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="pagination-buttons">
+        <button type="button"
+            (click)="handlePreviousPageButton()"
+            [disabled]="pageIndex === 0">
+            Previous
+        </button>
+        <button type="button"
+            (click)="handleNextPageButton()"
+            [disabled]="pageIndex === totalPage - 1">
+            Next
+        </button>
+    </div>
+</div>

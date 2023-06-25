@@ -1,0 +1,30 @@
+div {
+    margin: 10px 0;
+}
+
+label {
+    width: 150px;
+    display: inline-block;
+}
+
+.form-control {
+    display: inline-block;
+    width: 300px;
+}
+
+.form-control input[type=text] {
+    width: 100%;
+}
+
+.form-control input[type=date] {
+    width: 56%;
+}
+
+.form-control input[type=time] {
+    width: 40%;
+}
+
+.msg-success {
+    color: green;
+    font-size: 14px;
+}

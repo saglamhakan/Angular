@@ -1,0 +1,13 @@
+<h2>Todo Item Details</h2>
+
+<ul>
+    <li>
+        <strong>ID:</strong> {{ todoItem?.id }} 
+    </li>
+    <li>
+        <strong>Title:</strong> {{ todoItem?.title }}
+    </li>
+    <li>
+        <strong>Due Date:</strong> {{ todoItem?.dueDate | date: 'dd/MM/yyyy' }}
+    </li>
+</ul>

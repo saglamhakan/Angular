@@ -1,0 +1,23 @@
+<div>
+    <label>Todo Item Title:</label>
+    <div class="form-control">
+        <input type="text" [(ngModel)]="todoItem.title" required #title="ngModel" />
+    </div>
+</div>
+
+<div>
+    <label>Due Date:</label>
+    <div class="form-control">
+        <input type="date" [ngModel]="date" (ngModelChange)="handleDateChange($event)"/>
+        <input type="time" [ngModel]="time" (ngModelChange)="handleTimeChange($event)"/> 
+    </div>
+</div>
+
+<button type="button" [disabled]="isButtonDisabled" (click)="handleSaveTodoItem()">Save Todo Item</button>
+
+<p class="msg-success" *ngIf="isSuccess">
+    {{
+        todoId ? 'Todo item was updated successfully'
+            : 'New todo item was created successfully.'
+    }}
+</p>
